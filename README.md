@@ -13,6 +13,8 @@ Key features of Crealytic include:
 - Content Performance Analytics:
     Leverage AI-powered insights to analyze your content’s performance across platforms. Understand engagement metrics, identify trends, and receive actionable recommendations to maximize your reach and impact.
 
+## Preview
+soon!
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
