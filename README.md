@@ -1,8 +1,8 @@
-# Creator Verse
+# Crealytic
 
-Creator Verse is an innovative tool designed to empower content creators with cutting-edge AI technology, inspired by the web development workshop at DevFest Surabaya 2024. This platform is built to streamline and enhance the creative process, making it easier for creators to focus on what they do best—crafting compelling content.
+Crealytic is an innovative tool designed to empower content creators with cutting-edge AI technology, inspired by the web development workshop at DevFest Surabaya 2024. This platform is built to streamline and enhance the creative process, making it easier for creators to focus on what they do best—crafting compelling content.
 
-Key features of Creator Verse include:
+Key features of Crealytic include:
 
 - Script Creation with Gemini AI:
     Effortlessly generate professional-grade scripts tailored to your needs. Whether it’s for videos, podcasts, or written content, Gemini AI ensures your ideas come to life with clarity and creativity.
