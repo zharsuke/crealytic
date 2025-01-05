@@ -1,3 +1,19 @@
+# Creator Verse
+
+Creator Verse is an innovative tool designed to empower content creators with cutting-edge AI technology, inspired by the web development workshop at DevFest Surabaya 2024. This platform is built to streamline and enhance the creative process, making it easier for creators to focus on what they do best—crafting compelling content.
+
+Key features of Creator Verse include:
+
+- Script Creation with Gemini AI:
+    Effortlessly generate professional-grade scripts tailored to your needs. Whether it’s for videos, podcasts, or written content, Gemini AI ensures your ideas come to life with clarity and creativity.
+
+- Audio Transcription:
+    Save time by converting audio files into accurate, editable text. Perfect for podcast notes, meeting summaries, or turning spoken ideas into written content.
+
+- Content Performance Analytics:
+    Leverage AI-powered insights to analyze your content’s performance across platforms. Understand engagement metrics, identify trends, and receive actionable recommendations to maximize your reach and impact.
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
 ## Getting Started
