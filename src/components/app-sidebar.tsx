@@ -42,19 +42,19 @@ export function AppSidebar() {
     <Sidebar className="bg-bg">
       <SidebarContent>
         <SidebarGroup>
-            <SidebarGroupLabel className="text-xl font-bold mb-5">Crealytic</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-2xl font-bold mb-5 mt-1">Crealytic</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
-                <Badge key={item.title}>
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
+                <Badge key={item.title} className="mx-2">
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton asChild>
+                      <a href={item.url}>
+                        <item.icon />
+                        <span>{item.title}</span>
+                      </a>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
                 </Badge>
               ))}
             </SidebarMenu>
