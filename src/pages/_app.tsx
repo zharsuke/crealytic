@@ -13,8 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <div className={font.className}>
     <ThemeProvider
             attribute="class"
-            defaultTheme="system"
-            enableSystem
+            defaultTheme="light"
             disableTransitionOnChange>
       <Component {...pageProps} />
     </ThemeProvider>
