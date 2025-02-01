@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Document() {
   return (
-    <Html lang="en" data-theme="retro">
+    <Html lang="en">
       <Head />
       <body className="antialiased">
         <Main />

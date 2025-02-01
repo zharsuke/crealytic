@@ -1,8 +1,9 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import { Rokkitt } from "next/font/google";
+import { Roboto } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 
-const font = Rokkitt({
+const font = Roboto({
   weight: '400',
   subsets: ['latin'],
 });
@@ -10,7 +11,13 @@ const font = Rokkitt({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={font.className}>
+    <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange>
       <Component {...pageProps} />
+    </ThemeProvider>
     </div>
   );
 }

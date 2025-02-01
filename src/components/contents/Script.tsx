@@ -1,8 +1,11 @@
 import Layout from "@/components/Layout";
+import HeaderContent from "@/components/HeaderContent";
 
 export default function Script() {
     return (
         <Layout>
+            <HeaderContent currentPage="Script" />
+
             <div className="grid grid-cols-2 gap-4 my-4">
                 <div className="border border-dashed border-primary rounded-md p-2">
                     <h1 className="text-xl">Example Prompt 1:</h1>

@@ -1,24 +1,22 @@
-import Header from "./Header";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/components/app-sidebar"
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"
+import { Separator } from "@/components/ui/separator"
 
-type LayoutProps = {
-    children: React.ReactNode
-}
-
-export default function Layout({ children }: LayoutProps) {
-
-    const hover = "hover:text-primary transition ease-in-out delay-150 hover:-translate-y-0.5 duration-300";
-
-    return (
-        <div className="max-w-screen-lg mx-auto">
-
-            {/* header */}
-            <Header hover={hover}></Header>
-
-            {/* main content */}
-            <div className="mx-2">
-                {children}
-            </div>
-
-        </div>
-    )
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <SidebarProvider>
+      <AppSidebar />
+      <main className="w-full bg-bg">
+        {children}
+      </main>
+    </SidebarProvider>
+  )
 }
