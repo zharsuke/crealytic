@@ -9,13 +9,65 @@ import {
 } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from '@/components/ui/skeleton'
+import MarkdownComponent from "@/components/MarkdownComponent";
+import { useState } from "react";
 
 export default function Script() {
+  const [scriptInput, setScriptInput] = useState("");
+  const [scriptResult, setScriptResult] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    setScriptInput(e.target.value);
+  }
+
+  const handleGenerateScript = async () => {
+    const result = await fetchOpenAIScript(scriptInput);
+    setScriptResult(result);
+  }
+
+  const fetchOpenAIScript = async (input: string) => {
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/generate-script", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ input }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to generate script");
+      }
+
+      setIsLoading(false);
+
+      const data = await response.json();
+      return data.script;
+    } catch (error) {
+      console.error("Error fetching script:", error);
+      setIsLoading(false);
+      return "Error generating script. Please try again later.";
+    }
+  }
+
   return (
     <Layout>
       <HeaderContent currentPage="Script" />
 
       <div className="container mx-auto">
+        <Card className="m-4">
+          <CardHeader>
+            <CardTitle>Script Page</CardTitle>
+            <CardDescription>
+              This page allows content creators to generate scripts using Gemini AI integration.
+            </CardDescription>
+          </CardHeader>
+        </Card>
         <div className="grid grid-cols-2 gap-4 my-4 p-4">
           <Card>
             <CardHeader>
@@ -52,13 +104,23 @@ export default function Script() {
         </div>
 
         <div className="p-4">
-          <Textarea className="mb-4" placeholder="Enter your script idea here..." />
-          <Button className="w-full mb-5">Generate Script</Button>
-          {/* <Card>
+          <Textarea className="mb-4" placeholder="Enter your script idea here..." value={scriptInput} onChange={handleInputChange} />
+          <Button className="w-full mb-5" onClick={handleGenerateScript}>Generate Script</Button>
+          <Card>
             <CardContent>
-              <CardDescription></CardDescription>
+              <CardDescription>
+                {isLoading ? (
+                  <>
+                    <Skeleton className="h-5 w-full mb-1" />
+                    <Skeleton className="h-5 w-full mb-1" />
+                    <Skeleton className="h-5 w-full" />
+                  </>
+                ) : (
+                  <MarkdownComponent content={scriptResult} />
+                )}
+              </CardDescription>
             </CardContent>
-          </Card> */}
+          </Card>
         </div>
       </div>
     </Layout>
